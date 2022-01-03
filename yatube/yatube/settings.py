@@ -14,14 +14,11 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 SECRET_KEY = 'qao7_!tt2e_s^5hy0@yc_!gsj$8aw#nk=lk2xy+&&pb3k&_o=&'
 
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -44,6 +41,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
 ROOT_URLCONF = 'yatube.urls'
 
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
@@ -64,8 +62,8 @@ TEMPLATES = [
     }
 ]
 
-WSGI_APPLICATION = 'yatube.wsgi.application'
 
+WSGI_APPLICATION = 'yatube.wsgi.application'
 
 DATABASES = {
     'default': {
