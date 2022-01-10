@@ -19,10 +19,12 @@
   </head>
   <body>
     {% include "includes/header.html" %}
-    {% block content %}
-      <main>
+    <main>
+      <div class="container py-5">
+        {% block content %}
           <h1>Базовая страница проекта</h1>
-      </main>
-    {% endblock %}
+        {% endblock %}
+      </div>
+    </main>
     {% include "includes/footer.html" %}
   </body>

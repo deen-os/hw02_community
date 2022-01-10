@@ -10,7 +10,7 @@ class Group(models.Model):
         max_length=200,
         unique=True,
         db_index=True,
-        verbose_name='URL',
+        verbose_name='SLUG',
     )
     description = models.TextField()
 
@@ -28,7 +28,11 @@ class Post(models.Model):
     )
     group = models.ForeignKey(
         Group,
-        on_delete=models.CASCADE,
+        on_delete=models.SET_NULL,
         blank=True,
         null=True,
+        related_name='posts',
     )
+
+    class Meta:
+        ordering = ['-pub_date']
