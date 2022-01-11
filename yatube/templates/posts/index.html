@@ -7,7 +7,9 @@
   <h1>{{ title }}</h1>
   {% for post in posts %}
     {% include "includes/post_card.html" %}
-    <a href="{% url 'posts:group_posts' post.group.slug %}">все записи группы</a>
+    {% if post.group.slug %}
+      <a href="{% url 'posts:group_posts' post.group.slug %}">все записи группы</a>
+    {% endif %}
     {% if not forloop.last %}<hr>{% endif %}
   {% endfor %}
 {% endblock %}
