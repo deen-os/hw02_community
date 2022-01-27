@@ -5,11 +5,12 @@
 {% endblock %}
 {% block content %}
   <h1>{{ title }}</h1>
-  {% for post in posts %}
+  {% for post in page_obj %}
     {% include "includes/post_card.html" %}
-    {% if post.group.slug %}
+    {% if post.group %}
       <a href="{% url 'posts:group_posts' post.group.slug %}">все записи группы</a>
     {% endif %}
     {% if not forloop.last %}<hr>{% endif %}
   {% endfor %}
+  {% include 'posts/includes/paginator.html' %}
 {% endblock %}
